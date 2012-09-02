@@ -1,0 +1,37 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>test AjaxDomDispatcher</title>  
+    <link rel="stylesheet" href="../style.css"/> 
+  </head>
+  <body>
+    
+    <div id="header">
+      <a data-ajax-link="sample1.html" href="#sample-1">sample 1</a> |
+      <a data-ajax-link="sample1.html" data-ajax-block="#content" href="#sample-1">sample 1 with block</a> |
+      <a data-ajax-link="true" href="sample2.html">sample 2</a> |
+      <a data-ajax-link="true" href="sample3.php" data-ajax-block="#content">sample 3 with block (long loading)</a>
+    </div>
+    <div id="content">
+         initial value of content
+    </div>
+    <div id="footer">
+         initial value of footer
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../../lib/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="../paramblockui.js" type="text/javascript"></script>
+    <script src="../../lib/jquery.form.js" type="text/javascript"></script>
+    <script src="../../AjaxDomDispatcher.js" type="text/javascript"></script>
+    <script type="text/javascript">
+     
+      $(AjaxDomDispatcher.init);
+    </script>
+  </body>
+</html>

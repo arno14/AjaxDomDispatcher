@@ -1,0 +1,33 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>test submit form</title>
+        <link rel="stylesheet" href="../style.css"/> 
+  </head>
+  <body>
+    <div id="header">
+      <a data-ajax-link="load.php" data-ajax-block="#content">load form</a> |
+      <a data-ajax-link="submit_file.php" data-ajax-block="#content">load form with file</a> |
+      <a data-ajax-link="sample2.html" data-ajax-block="#content" href="#sample-1">sample 2 with block</a> |
+    </div>
+    <div id="content">
+         initial value of content
+    </div>
+    <div id="footer">
+         initial value of footer
+    </div>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../../lib/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="../paramblockui.js" type="text/javascript"></script>
+    <script src="../../lib/jquery.form.js" type="text/javascript"></script>
+    <script src="../../AjaxDomDispatcher.js" type="text/javascript"></script>
+    <script type="text/javascript">     
+      $(AjaxDomDispatcher.init);
+    </script>
+  </body>
+</html>

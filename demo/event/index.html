@@ -1,0 +1,52 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>test submit form</title>
+        <link rel="stylesheet" href="../style.css"/> 
+  </head>
+  <body>
+    <div id="header">
+      <a data-ajax-link="load.php" data-ajax-block="#content">load form</a> |      
+      <a data-ajax-link="sample2.html" data-ajax-block="#content" >sample 2 with block</a> |
+      <a data-ajax-link="sample3.html" data-ajax-block="#content" >sample 3 with block</a> |
+    </div>
+    <div id="notification" style="min-height:20px;color:green;border:1px solid red;">      
+    </div>
+    <div id="content">
+         initial value of content
+    </div>
+    <div id="footer">
+         initial value of footer
+    </div>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../../lib/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="../paramblockui.js" type="text/javascript"></script>
+    <script src="../../lib/jquery.form.js" type="text/javascript"></script>
+    <script src="../../AjaxDomDispatcher.js" type="text/javascript"></script>
+    <script type="text/javascript">  
+      $(function(){
+        
+        AjaxDomDispatcher.init();
+//        return;
+        AjaxDomDispatcher.log=function(){};
+        
+        
+        $(document).on('targetNotFound.ajaxDomDispatcher',console.log)
+                   .on('afterLoad.ajaxDomDispatcher','.sel-ipsum',console.log);
+        $('#content').on('beforeLoad.ajaxDomDispatcher',console.log);
+        $('#footer').on('afterLoad.ajaxDomDispatcher',console.log);
+        
+        $('#notification').on('afterLoad.ajaxDomDispatcher',function(evt,$target,content,method,$element){
+          $(this).fadeOut(2000,function(){
+                    $(this).html('').show();
+                })
+        })
+      });
+    </script>
+  </body>
+</html>

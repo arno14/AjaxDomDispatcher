@@ -1,0 +1,60 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>test submit form</title>
+        <link rel="stylesheet" href="../style.css"/> 
+  </head>
+  <body>
+    <div id="header">
+      <a data-ajax-link="controller.php?action=list&limit=20" data-ajax-block="#content" href="#">load 20 rows</a> | 
+      <a data-ajax-link="true" data-ajax-block="#content" href="controller.php?action=list&limit=50">load 50 rows</a> | 
+      <a data-ajax-link="true" data-ajax-block="#content" href="controller.php?action=list&limit=150&offset=5000">load 150 rows from 5000</a> | 
+
+    </div>
+    <div id="notification" style="min-height:20px;color:green;border:1px solid red;">      
+    </div>
+    <div id="content">
+      <div id="result">
+        total rows=<span class="total-rows"></span>
+        total pop=<span class="total-pop"></span>
+      </div>
+      <form action="controller.php?action=update" data-ajax-submit="true" method="post" data-ajax-block="#content">
+      <table id="datagrid">
+        <thead>
+          <th>id</th>
+          <th>CODGEO</th>
+          <th>LIBGEO</th>
+          <th>REG</th>
+          <th>DEP</th>
+          <th></th>
+        </thead>
+        <tbody>
+          
+        </tbody>        
+      </table>
+      </form>
+    </div>
+    <div id="footer">
+         initial value of footer
+    </div>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../../lib/jquery.blockUI.js" type="text/javascript"></script>
+    <script src="../paramblockui.js" type="text/javascript"></script>
+    <script src="../../lib/jquery.form.js" type="text/javascript"></script>
+    <script src="../../AjaxDomDispatcher.js" type="text/javascript"></script>
+    <script type="text/javascript">  
+      $(function(){
+        
+        AjaxDomDispatcher.init();
+        
+        $.get('controller.php?action=list');
+
+      });
+    </script>
+  </body>
+</html>

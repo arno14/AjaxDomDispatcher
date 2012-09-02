@@ -1,0 +1,22 @@
+#header,#content,#footer{
+  
+  border:1px solid grey;
+  margin:1em;
+  padding:1em;
+}
+#content{
+  min-height:100px;
+}
+table{
+  width:100%;
+}
+tr,th{
+  width:15%;
+}
+input{
+  width:90%;
+}
+table,tr,th,td{
+  border:1px solid black;
+  
+}
